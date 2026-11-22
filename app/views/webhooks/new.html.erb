@@ -1,0 +1,32 @@
+<h2>Create a webhook</h2>
+
+<%= form_with(model: @webhook) do |form| %>
+  <% if @webhook.errors.any? %>
+    <div>
+      <h3>there were some errors :(</h3>
+      <ul>
+        <% for error in @webhook.errors %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id %>
+  </div>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+  <div>
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </div>
+  <%= form.submit %>
+<% end %>

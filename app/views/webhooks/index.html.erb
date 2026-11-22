@@ -1,0 +1,30 @@
+<h2>List of all webhooks</h2>
+
+<%= link_to 'Create', { action: 'new' }, method: :get %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Project</th>
+      <th>Name</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @webhooks.each do |webhook| %>
+      <tr>
+        <td><%= webhook.id %></td>
+        <td><%= webhook.project %></td>
+        <td><%= webhook.name %></td>
+        <td><%= webhook.active %></td>
+        <td>
+          <%= link_to 'Test', { action: 'test_webhook', id: webhook[:id] }, method: :post %>
+          <%= link_to 'Edit', { action: 'edit', id: webhook[:id] }, method: :get %>
+          <%= link_to 'Delete', { action: 'destroy', id: webhook[:id] }, method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
