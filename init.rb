@@ -1,5 +1,3 @@
-require_relative 'lib/webhook_fpl/model_hook'
-
 Redmine::Plugin.register :webhook_fpl do
   name 'Webhooks!'
   author 'Michał Wlazło'
